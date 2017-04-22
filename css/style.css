@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Agency;
+    src: url(../fonts/AgencyFB.ttf);
+}
+
+#logo_box{
+  border: 1px solid #ded9c3;
+  text-align: center;
+  background: #ded9c3;
+  font-family: Agency;
+}
+.logo_letter_box{
+  display: inline-block;
+  background: white;
+  text-align: center;
+  margin-left: 3px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 2em;
+  width: 7%;
+}
+.logo_second_part{
+  text-align: center;
+  font-family: Agency;
+  font-size: 2em;
+  border: 1px solid #ded9c3;
+}
+.color_red{
+  color: #fa2e21;
+}
+.color_brown{
+  color: #968c56;
+}
+.search-bar{
+  text-align: center;
+  margin-top: 15px;
+}
+.input_search{
+  width: 95%;
+  border: 1px solid #ded9c3;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.input-group-addon{
+  background-color: #ded9c3;
+}
+.content{
+  margin-top: 20px;
+}
