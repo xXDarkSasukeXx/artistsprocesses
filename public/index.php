@@ -1,24 +1,8 @@
-<?php require('header.php') ?>
+<?php require('../shared/header.php') ?>
 <div class="container content">
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <div class="col-md-12" id="logo_box">
-        <div class="logo_letter_box">
-          1
-        </div>
-        <div class="logo_letter_box">
-          0
-        </div>
-        <div class="logo_letter_box">
-          8
-        </div>
-        <div class="logo_letter_box">
-          9
-        </div>
-      </div>
-      <div class="col-md-12 logo_second_part">
-        <span class='color_red'>artist'</span><span class="color_brown"> processes</span>
-      </div>
+      <?php include('../shared/logo.php') ?>
     </div>
     <div class="col-md-offset-10">
       Connexion
@@ -51,4 +35,4 @@
   </div>
 
 </div>
-<?php require('footer.php') ?>
+<?php require('../shared/footer.php') ?>

@@ -1,0 +1,17 @@
+.left_side_content{
+  border: 1px
+}
+.left_side_content{
+  border-right: 1px solid #968c56;
+}
+.title_suffix{
+  position: absolute;
+  top: -10px;
+}
+.artist_label{
+  font-weight: bold;
+  color: #968c56;
+}
+.checkboxes{
+  font-size: 0.8em;
+}

@@ -1,0 +1,46 @@
+@font-face {
+    font-family: Agency;
+    src: url(../fonts/AgencyFB.ttf);
+}
+.main_font{
+  font-family: Agency;
+}
+.color_red{
+  color: #fa2e21;
+}
+.color_brown{
+  color: #968c56;
+}
+.search-bar{
+  text-align: center;
+  margin-top: 15px;
+}
+.input-group-addon{
+  background-color: #ded9c3;
+}
+.content{
+  margin-top: 20px;
+}
+
+.menu_li{
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 20px;
+  padding-left: 0;
+}
+.menu_li:first-child{
+  margin-left: 0;
+}
+.menu-parent{
+  padding-left: 0;
+}
+.top-margin{
+  margin-top: 15px;
+}
+.artist_top{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #968c56;
+}
+.related_artists{
+  border-bottom: 1px solid #968c56;
+}
