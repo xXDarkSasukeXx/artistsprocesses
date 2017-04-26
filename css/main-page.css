@@ -15,3 +15,30 @@
 .checkboxes{
   font-size: 0.8em;
 }
+.checks{
+  padding-left: 0;
+  padding-right: 0;
+}
+.artist_top{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #968c56;
+}
+.related_artists{
+  border-bottom: 1px solid #968c56;
+}
+.fa-angle-left{
+  position: absolute;
+  left: 0;
+  font-size: 2em;
+}
+.fa-angle-right{
+  position: absolute;
+  right: 0;
+  font-size: 2em;
+}
+.artist-arts{
+  margin-top: 40px;
+}
+.fa-user-o{
+  color: #968c56;
+}

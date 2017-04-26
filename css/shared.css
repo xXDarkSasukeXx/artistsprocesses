@@ -2,6 +2,19 @@
     font-family: Agency;
     src: url(../fonts/AgencyFB.ttf);
 }
+a{
+  color: #968c56;
+  transition: all 1s ease;
+  text-decoration: none;
+}
+a:visited{
+  color: black;
+}
+a:hover{
+  color: #ded9c3;
+  text-decoration: none;
+
+}
 .main_font{
   font-family: Agency;
 }
@@ -37,10 +50,7 @@
 .top-margin{
   margin-top: 15px;
 }
-.artist_top{
-  padding-bottom: 20px;
-  border-bottom: 1px solid #968c56;
-}
-.related_artists{
-  border-bottom: 1px solid #968c56;
+.nopad{
+  padding-left: 0;
+  padding-right: 0;
 }

@@ -36,36 +36,61 @@
       </div>
     </div>
   </div>
-  <div class="col-md-5 related_artists">
-    <div class="col-md-5 artist_scene">
-      <span class="color_red">Artistes</span> de la scène:
-      <div>
-        Ayant le même
+  <div class="col-md-5 nopad">
+    <div class="col-md-12 related_artists">
+      <div class="col-md-5 artist_scene">
+        <span class="color_red">Artistes</span> de la scène:
+        <div>
+          Ayant le même
+        </div>
+      </div>
+      <div class="col-md-7 checks">
+        <div>
+          <span class="checkboxes">
+            <div class="col-md-6">
+              <input type="checkbox" name="scene" value="International"> Internationale
+            </div>
+            <div class="col-md-6">
+              <input type="checkbox" name="scene" value="French"> Française
+            </div>
+          </span>
+        </div>
+        <div>
+          <span class="checkboxes">
+            <div class="col-md-6">
+              <input type="checkbox" name="mandm" value="Moteur"> Moteur
+            </div>
+            <div class="col-md-6">
+              <input type="checkbox" name="mandm" value="Moyen"> Moyen
+            </div>
+          </span>
+        </div>
       </div>
     </div>
-    <div class="col-md-7">
-      <div>
-        <span class="checkboxes">
-          <div class="col-md-6">
-            <input type="checkbox" name="scene" value="International"> Internationale
-          </div>
-          <div class="col-md-6">
-            <input type="checkbox" name="scene" value="French"> Française
-          </div>
-        </span>
-      </div>
-      <div>
-        <span class="checkboxes">
-          <div class="col-md-6">
-            <input type="checkbox" name="mandm" value="Moteur"> Moteur
-          </div>
-          <div class="col-md-6">
-            <input type="checkbox" name="mandm" value="Moyen"> Moyen
-          </div>
-        </span>
-      </div>
+    <div class="col-md-12 text-center top-margin">
+      Related artists, Related artists, Related artists, Related artists, Related artists,
     </div>
   </div>
 </div>
+<div class="row artist-arts">
+  <div class="col-md-12">
+    <i class="fa fa-angle-left color_brown" aria-hidden="true"></i>
+    <i class="fa fa-angle-right color_brown" aria-hidden="true"></i>
+    <div class="slider">
+      <div class="">
+        image 1
+      </div>
+      <div class="">
+        image 2
+      </div>
+      <div class="">
+        image 3
+      </div>
+      <div class="">
+        image 4
+      </div>
+    </div>
+
+  </div>
 </div>
 <?php require('../shared/footer.php') ?>

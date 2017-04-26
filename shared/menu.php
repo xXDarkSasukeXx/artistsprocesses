@@ -17,12 +17,12 @@
             <div class="input-group search-bar">
               <span class="input-group-addon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
               <input type="text" class='form-control input_search' name="artistSearch" placeholder="Entrez un nom d'artiste">
-              <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+              <span class="input-group-addon"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></span>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <a href="#" class="color_red">Connexion</a>
+      <div class="col-md-2 col-md-offset-1">
+        <a href="#" class="color_red"><i class="fa fa-user-o" aria-hidden="true"></i> Connexion</a>
       </div>
     </div>

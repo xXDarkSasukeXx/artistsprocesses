@@ -16,21 +16,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <?php
-      function connectBdd(){
-      	try{
-          $bdd = new PDO("mysql:host=localhost;dbname=artistsprocesses;port=8889", "root", "root");
-      	}catch(Exception $e){
-      		die("Erreur : ".$e->getMessage()); // ="méthode"
-      	}
-          return $bdd;
-      }
-        $db = connectBdd();
-        $getusers = $db->prepare("SELECT name, surname FROM USERS");
-        $results = $getusers->fetch();
-        echo $results;
-      ?>
+    <div class="col-md-4 col-md-offset-4 artist_list">
+      <a href="artist.php">Artists1</a> / <a href="artist.php">Artist2</a>
     </div>
   </div>
 
