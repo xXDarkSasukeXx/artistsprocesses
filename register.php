@@ -44,7 +44,7 @@ if(
     }
 
     //Le mot de passe doit faire entre 8 et 16 caractères
-    if(strlen($_POST['pwd1']) <= 8 || strlen($_POST['pwd1']) >= 16 || $_POST["pwd1"] == $_POST["pseudo"]){
+    if(strlen($_POST['pwd1']) <= 6 || strlen($_POST['pwd1']) >= 15 || $_POST["pwd1"]){
         $error = TRUE;
         $_SESSION["error_subscription"][]=4;
     }
@@ -82,7 +82,7 @@ if(
         $error = TRUE;
         $_SESSION["error_subscription"][]=8;
     }else{
-        if(strtotime($_POST["deathday"]) < strtotime($_POST["birthday"])){
+        if(strtotime($_POST["deathday"]) < strtotime($_POST["birthday"]) && strtotime($_POST["deathday"])!=0){
             $error = TRUE;
             $_SESSION["error_subscription"][]=8;
         }
