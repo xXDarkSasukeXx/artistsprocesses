@@ -1,11 +1,11 @@
 <?php
-
+session_start();
 require "init.php";
 
 $bdd = connectBdd();
- 
+
 $error = FALSE;
- 
+
 if(
     !empty($_POST["email"]) &&
     !empty($_POST["name"]) &&
@@ -20,12 +20,12 @@ if(
     isset($_POST["ending"]) &&
     (!empty($_POST["captcha"]) || !empty($_GET["id"]))
     ){
- 
+
     $_POST['email'] =  strtolower(trim($_POST['email']));
     $_POST['name'] = trim($_POST['name']);
     $_POST['surname'] = trim($_POST['surname']);
-    
-    
+
+
     //Vérifier format de l'adresse email
     if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
         $error = TRUE;
@@ -36,8 +36,8 @@ if(
     if(strlen($_POST['name']) < 2){
         $error = TRUE;
         $_SESSION["error_subscription"][]=2;
-    } 
-    
+    }
+
     if($_POST["name"] == $_POST["surname"]){
         $error = TRUE;
         $_SESSION["error_subscription"][]=3;
@@ -53,8 +53,8 @@ if(
         $error = TRUE;
         $_SESSION["error_subscription"][]=5;
     }
-    
-    //le statut doit correspondre 
+
+    //le statut doit correspondre
     if($_POST['status'] != "0" && $_POST['status'] != "1" && $_POST['status'] != "2"){
         $error = TRUE;
         $_SESSION["error_subscription"][]=6;
@@ -121,13 +121,13 @@ if(
     }
 
     if(!isset($_GET["id"])){
-    
+
         //CGU doit exister
         if(empty($_POST["cgu"])){
             $error = TRUE;
             $_SESSION["error_subscription"][]=12;
         }
-        
+
         //le captcha entré doit correspondre
         if($_POST["captcha"] != $_SESSION['captcha']){
             $error = TRUE;
@@ -135,7 +135,7 @@ if(
         }
     }
 
-    
+
     $id = (empty($_GET["id"]))?-1:$_GET["id"];
     $query = $bdd -> prepare("SELECT id FROM users WHERE email= :email AND id!=:id");
     $query -> execute([
@@ -153,10 +153,9 @@ if(
     }
 
 }
- 
+
 if($error){
     $_SESSION["subscription"] = $_POST;
-    header("Location: CreateUser.php");
 }else{
 
     $accesstoken = md5(uniqid());

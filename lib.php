@@ -1,17 +1,6 @@
 <?php
 require_once "conf.inc.php";
 
-function dbConnect(){
-    try{
-        $db = new PDO(DB_DRIVER.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT,DB_USER,DB_PWD);
-
-    }catch(Exception $e){
-        die("Erreur SQL ". $e->getMessage());
-    }
-
-    return $db;
-}
-
 
 function sameMotor($idMotor){
     $db=dbConnect();
@@ -44,5 +33,5 @@ function sameBoth($idMean,$idMotor){
     ]);
     foreach ($query->fetchAll() as $value) {
         echo $value["name"]." ".$value["surname"]."<br>";
-    }  
+    }
 }
