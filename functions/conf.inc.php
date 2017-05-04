@@ -6,7 +6,7 @@ define("DB_PORT", 8889);
 define("DB_USER", "root");
 define("DB_PWD", "root");
 
-$list_of_status = ["0"=>"Visiteur", "1"=>"Artiste", "2"=>"Admin"];
+$list_of_status = ["0"=>"Visiteur", "1"=>"Artiste"];
 $list_of_scenes = ["0"=>"France", "1"=>"Internationale"];
 $list_of_country = ["France", "Pologne", "Belgique"];
 $list_of_errors = [

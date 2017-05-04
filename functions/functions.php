@@ -64,3 +64,11 @@ function logout(){
     header("Location: backOffice.php");
 
 }
+function displayArtists(){
+	$bdd = connectBdd();
+	$query = $bdd -> execute("SELECT name,surname FROM users WHERE is_verified=1");
+	$result = $query->fetch();
+	foreach ($result as $key) {
+		echo $result[$key] .' / ';
+	}
+}
