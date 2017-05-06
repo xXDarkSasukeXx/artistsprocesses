@@ -1,17 +1,20 @@
 <?php
+	session_start();
 	require "../shared/header.php";
 	require "init.php";
 
 
 if(isset( $_SESSION['subscription']) ){
-    $_POST = $_SESSION['subscription'];
-    echo "<ul>";
-    foreach ($_SESSION['error_subscription'] as $error) {
+    $msgErrors = explode(",", $_SESSION['subscription']);
+    foreach ($msgErrors as $error) {
         echo "<li>".$list_of_errors[$error];
     }
-    echo "</ul>";
-    session_destroy();
+
+		$form = $_SESSION['data_form'];
+		unset($_SESSION['data_form']);
+		unset($_SESSION['subscription']);
 }
+
 ?>
 <div class="row">
 	<div class="col-md-4">
@@ -30,7 +33,7 @@ if(isset( $_SESSION['subscription']) ){
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-					<input type="email" class='form-control' placeholder="Email" name="email" value="<?php echo (isset($_POST["email"]))?$_POST["email"]:"" ?>" required>
+					<input type="email" class='form-control' placeholder="Email" name="email" value="<?php echo (isset($form["email"]))?$form["email"]:"" ?>" required>
 				</div>
 			</div>
 			<div class="col-md-6 top-margin">
@@ -39,7 +42,7 @@ if(isset( $_SESSION['subscription']) ){
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-					<input type="text" class='form-control' placeholder="Name" name="name"  value="<?php echo (isset($_POST["name"]))?$_POST["name"]:"" ?>" >
+					<input type="text" class='form-control' placeholder="Name" name="name"  value="<?php echo (isset($form["name"]))?$form["name"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-6 top-margin">
@@ -48,7 +51,7 @@ if(isset( $_SESSION['subscription']) ){
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-					<input type="text" class='form-control' placeholder="Surname" name="surname"  value="<?php echo (isset($_POST["surname"]))?$_POST["surname"]:"" ?>" >
+					<input type="text" class='form-control' placeholder="Surname" name="surname"  value="<?php echo (isset($form["surname"]))?$form["surname"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-6 top-margin">
@@ -76,7 +79,7 @@ if(isset( $_SESSION['subscription']) ){
 				<?php
 						foreach ($list_of_status as $key => $value) {
 								echo "<div class='radio-inline'><label>";
-								if(isset($_POST['status']) && $_POST['status']==$key){
+								if(isset($form["status"]) && $form["status"]==$key){
 										echo "<input type='radio' checked='checked' name='status' value='".$key."'>";
 								}else{
 										echo "<input type='radio' name='status' value='".$key."'>";
@@ -92,7 +95,7 @@ if(isset( $_SESSION['subscription']) ){
 				</div>
 				<div class="">
 					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-					<input type="date" class='' name="birthday" value="<?php echo (isset($_POST["birthday"]))?$_POST["birthday"]:"" ?>" >
+					<input type="date" class='' name="birthday" value="<?php echo (isset($form["birthday"]))?$form["birthday"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-6 top-margin">
@@ -101,7 +104,7 @@ if(isset( $_SESSION['subscription']) ){
 				</div>
 				<div class="">
 					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-					<input type="date" class='' name="deathday" value="<?php echo (isset($_POST["deathday"]))?$_POST["deathday"]:"" ?>" >
+					<input type="date" class='' name="deathday" value="<?php echo (isset($form["deathday"]))?$form["deathday"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-12 top-margin">
@@ -111,7 +114,7 @@ if(isset( $_SESSION['subscription']) ){
 				<?php
 						foreach ($list_of_scenes as $key => $value) {
 								echo "<div class='radio-inline'><label>";
-								if(isset($_POST['scene']) && $_POST['scene']==$key){
+								if(isset($form['scene']) && $form['scene']==$key){
 										echo "<input type='radio' checked='checked' name='scene' value='".$key."'>";
 								}else{
 										echo "<input type='radio' name='scene' value='".$key."'>";
@@ -127,7 +130,7 @@ if(isset( $_SESSION['subscription']) ){
 				</div>
 				<div class="">
 					<span class=""><i class="fa fa-calendar" aria-hidden="true"></i></span>
-					<input type="date" class='' name="beginning" value="<?php echo (isset($_POST["beginning"]))?$_POST["beginning"]:"" ?>" >
+					<input type="date" class='' name="beginning" value="<?php echo (isset($form["beginning"]))?$form["beginning"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-6 top-margin">
@@ -136,7 +139,7 @@ if(isset( $_SESSION['subscription']) ){
 				</div>
 				<div class="">
 					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-					<input type="date" class='' name="ending" value="<?php echo (isset($_POST["ending"]))?$_POST["ending"]:"" ?>" >
+					<input type="date" class='' name="ending" value="<?php echo (isset($form["ending"]))?$form["ending"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-12 top-margin">
