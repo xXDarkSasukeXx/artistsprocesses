@@ -33,38 +33,30 @@ function emailExist($email){
 }*/
 
 function isConnected(){
-    if (!empty($_SESSION["accesstoken"])) {
-        $bdd = connectBdd();
-        $query = $bdd->prepare("SELECT id FROM member WHERE email = :email AND accesstoken = :accesstoken");
-        $query->execute(["email"=>$_SESSION['email'], "accesstoken"=>$_SESSION['accesstoken']]);
-        $result = $query->fetch();
-        if (empty($result)) {
-            //$_SESSION['accesstoken'] = generateAccessToken($_SESSION['email']);
-            unset($_SESSION["accesstoken"]);
-            return false;
-        }else{
-            return true;
-        }
-    }
+	if (!empty($_SESSION['accesstoken'])){
+		$db = connectBdd();
+		$connected = $db->prepare("SELECT id, email FROM users WHERE is_deleted is null AND accesstoken = :access_token AND email = :email");
+		$connected->execute([
+			'access_token'=>$_SESSION["accesstoken"],
+			'email'=>$_SESSION['email']
+		]);
+		if(empty($connected->fetch())){
+			unset($_SESSION["accesstoken"]);
+			return false;
+		}else{
+			return true;
+		}
+	}
+}
+function disconnected(){
+	if(!empty($_SESSION['accesstoken'])){
+	$db = connectBdd();
+	$query= $db->prepare("UPDATE users set accesstoken=null WHERE email = :email");
+	$query->execute(['email'=>$_SESSION['email']]);
+	unset($_SESSION["accesstoken"]);
+	}
 }
 
-function logout(){
-
-    if(!empty($_SESSION["accesstoken"])){
-
-    $bdd = connectBdd();
-    $query = $bdd -> prepare("UPDATE member SET accesstoken=null WHERE email=:email");
-    $query -> execute([
-
-        "email"=>$_SESSION["email"]
-
-    ]);
-
-    }
-    unset($_SESSION["accesstoken"]);
-    header("Location: backOffice.php");
-
-}
 
 function displayArtists(){
 	$bdd = connectBdd();

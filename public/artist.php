@@ -1,12 +1,30 @@
-<?php require('../shared/menu.php') ?>
+<?php require('../shared/menu.php');
+    
+      $db = connectBdd();
+      // Fetch artist details
+      $query = $db->prepare("SELECT * FROM users WHERE id = :id");
+      $query->execute(['id'=>$_GET['id']]);
+      $result = $query->fetch();
+      // Fetch motor
+      $get_motor = $db->prepare("SELECT * FROM users, motor WHERE users.id_MOTOR=motor.id AND users.id=:id");
+      $get_motor->execute(['id'=>$_GET['id']]);
+      $output = $get_motor->fetch();
+      // Fetch means
+      $get_means = $db->prepare("SELECT * FROM users, means WHERE users.id_MEANS=means.id AND users.id=:id");
+      $get_means->execute(['id'=>$_GET['id']]);
+      $output_means = $get_means->fetch();
+
+?>
 <div class="row artist_info">
   <div class="col-md-7">
     <div class="row left_side_content">
-      <div class="col-md-6 artist_top">
-        Username
+      <div class="col-md-6 artist_top artist_name">
+        <?php echo $result["name"] . ' ' . $result["surname"]; ?>
       </div>
       <div class="col-md-6 artist_top">
-        yearfame-endfame
+        <?php
+          echo date('Y',strtotime($result["best_period_beginning"])) . '-' . date('Y',strtotime($result["best_period_beginning"]));
+        ?>
       </div>
       <div class="col-md-12 top-margin">
         <span class="color_red">MOTEUR</span>
@@ -15,10 +33,10 @@
         </span>
       </div>
       <div class="col-md-12 artist_label">
-        oklm description
+        <?php echo $output["label"]; ?>
       </div>
       <div class="col-md-12">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <?php echo $output["description"]; ?>
       </div>
     </div>
     <div class="row left_side_content">
@@ -29,10 +47,10 @@
         </span>
       </div>
       <div class="col-md-12 artist_label">
-        oklm description
+        <?php echo $output_means["label"]; ?>
       </div>
       <div class="col-md-12">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <?php echo $output_means["description"]; ?>
       </div>
     </div>
   </div>
@@ -93,4 +111,4 @@
 
   </div>
 </div>
-<?php require('../shared/footer.php') ?>
+<?php require('../shared/footer.php'); ?>
