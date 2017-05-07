@@ -1,4 +1,7 @@
-<?php require('header.php') ?>
+<?php
+session_start();
+require('../functions/init.php');
+require('header.php'); ?>
   <div class="container content">
     <div class="row">
       <div class="col-md-3">
@@ -23,6 +26,12 @@
         </div>
       </div>
       <div class="col-md-2 col-md-offset-1">
-        <a href="#" class="color_red"><i class="fa fa-user-o" aria-hidden="true"></i> Connexion</a>
+        <?php if(!isConnected()): ?>
+            <a href="#" class="color_red" data-toggle="modal" data-target=".connectUser"><i class="fa fa-user-o" aria-hidden="true"></i> Se connecter</a>
+				<?php else:?>
+					<a href="../functions/disconnectUser.php" class="color_red"><i class="fa fa-user-o" aria-hidden="true"></i> Se déconnecter</a>
+				<?php endif; ?>
       </div>
+
+      <?php require("connectionModal.php"); ?>
     </div>

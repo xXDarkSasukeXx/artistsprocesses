@@ -7,9 +7,7 @@ a{
   transition: all 1s ease;
   text-decoration: none;
 }
-a:visited{
-  color: black;
-}
+
 a:hover{
   color: #ded9c3;
   text-decoration: none;
@@ -53,4 +51,10 @@ a:hover{
 .nopad{
   padding-left: 0;
   padding-right: 0;
+}
+.btn-validate{
+  background-color: #ded9c3;
+}
+.btn-close{
+  background-color: #ded9c3;
 }

@@ -168,12 +168,11 @@ if(
 
 
     if(!$error){
-        $accesstoken = md5(uniqid());
         $mdp = password_hash($_POST['pwd1'], PASSWORD_DEFAULT);
         if(empty($_GET["id"])){
                 $query = $bdd->prepare(
-                    "INSERT INTO users (email, name, surname, password, status, birthday, date_death, scene, best_period_beginning, best_period_ending, accesstoken)
-                    VALUES (:email,:name,:surname,:password,:status,:birthday,:deathday, :scene, :beginning, :ending, :accesstoken);"
+                    "INSERT INTO users (email, name, surname, password, status, birthday, date_death, scene, best_period_beginning, best_period_ending)
+                    VALUES (:email,:name,:surname,:password,:status,:birthday,:deathday, :scene, :beginning, :ending);"
                     );
                 $query->execute([
                     "email"=>$_POST["email"],
@@ -186,7 +185,6 @@ if(
                     "scene"=>$_POST["scene"],
                     "beginning"=>$_POST["beginning"],
                     "ending"=>$_POST["ending"],
-                    "accesstoken"=>$accesstoken
                 ]);
         }else{
             $query = $bdd->prepare(
