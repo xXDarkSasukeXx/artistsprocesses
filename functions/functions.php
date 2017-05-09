@@ -23,15 +23,6 @@ function emailExist($email){
     }
 }
 
-/*function generateAccessToken($email){
-    $accesstoken = md5(uniqid());
-    $bdd = connectBdd();
-    $query = $bdd->prepare("UPDATE member SET accesstoken = :titi WHERE email = :tyty");
-    $query -> execute(["titi"=> $accesstoken, "tyty" =>$email]);
-
-    return $accesstoken;
-}*/
-
 function isConnected(){
 	if (!empty($_SESSION['accesstoken'])){
 		$db = connectBdd();

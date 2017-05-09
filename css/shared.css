@@ -58,3 +58,9 @@ a:hover{
 .btn-close{
   background-color: #ded9c3;
 }
+.top-connection{
+  text-align: right;
+}
+.connected_user{
+  display: block;
+}
