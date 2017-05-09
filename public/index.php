@@ -22,6 +22,7 @@ require('../shared/header.php');
       <a href="../functions/disconnectUser.php" class="color_red">Se déconnecter</a>
     <?php endif; ?>
   </div>
+
   <?php require("../shared/connectionModal.php"); ?>
 
 </div>

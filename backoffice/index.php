@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,9 +18,9 @@
     $query = $db->prepare("SELECT * FROM users WHERE id = :id");
     $query->execute(['id'=>$_GET['id']]);
     $result = $query->fetch();
-    // if (!isConnected()) {
-    //   echo "<script>location.href='../public/index.php';</script>";
-    // }
+    if (!isConnected()) {
+      echo "<script>location.href='../public/index.php';</script>";
+    }
     ?>
 
     <div class="container-fluid">
