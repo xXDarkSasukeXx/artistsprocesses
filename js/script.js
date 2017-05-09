@@ -21,8 +21,8 @@ $('.fa-bars').on('click', function(){
         $('.sidebar').removeClass('toggled');
       });
   }else{
+    $('.sidebarBody').fadeOut();
     $('.sidebar').animate({ 'height': '60px' }, 'slow', function(){
-      $('.sidebarBody').fadeOut();
       $('.sidebar').addClass('toggled');
     });
   }

@@ -1,27 +1,27 @@
 
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-      Ok
-    </div>
     <div role="tabpanel" class="tab-pane" id="profile">
-      oklm
+      <?php require('profil.php'); ?>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+      <?php require('messages.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="stats">
-      oklm1
+      <?php require('stats.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="artists">
-      oklm2
+      <?php require('artistlist.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="users">
-      oklm3
+      <?php require('userslist.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="followers">
-      oklm4
+      <?php require('followers.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="following">
-      oklm5
+      <?php require('following.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="contact">
-      oklm6
+      <?php require('contact.php'); ?>
     </div>
   </div>

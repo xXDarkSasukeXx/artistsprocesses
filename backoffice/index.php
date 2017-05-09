@@ -34,30 +34,25 @@
             </div>
             <div class="userStatus">
               <?php
-                switch ($result['status']) {
-                  case 0:
+                if($result['is_admin']==1){
+                  echo 'Administrateur';
+                }else{
+                  if ($result['status']==1) {
+                    echo 'Artiste';
+                  }else{
                     echo 'Utilisateur';
-                    break;
-                  case 1:
-                    echo "Artiste";
-                    break;
-                  case 2:
-                    echo "Administrateur";
-                    break;
-                  default:
-                    echo 'Utilisateur';
-                    break;
+                  }
                 }
               ?>
             </div>
           </div>
           <div class="sidebarBody">
             <ul class="" role="tablist">
-              <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Profil</a></li>
-              <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Messages</a></li>
+              <li role="presentation"><a href="#profil" aria-controls="profil" role="tab" data-toggle="tab">Profil</a></li>
+              <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
               <?php
-              if ($result['status']==2) {
-                echo '<li role="presentation"><a href="#stats" aria-controls="stats" role="tab" data-toggle="tab">Gestion</a></li>
+              if ($result['is_admin']==1) {
+                echo '<li role="presentation" class="active"><a href="#stats" aria-controls="stats" role="tab" data-toggle="tab">Gestion</a></li>
                       <li role="presentation"><a href="#artists" aria-controls="artists" role="tab" data-toggle="tab">Les artistes</a></li>
                       <li role="presentation"><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Les utilisateurs</a></li>';
               }
@@ -73,4 +68,4 @@
       </div>
     </div>
 
-<?php require("../shared/footer.php") ?>
+<?php require('../shared/footer.php'); ?>
