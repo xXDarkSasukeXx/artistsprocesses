@@ -48,7 +48,7 @@ if(!empty($_POST['pwd1']) && !empty($_POST['email'])){
     $_SESSION['email']=$_POST['email'];
     //On l'insère en BDD dans une nouvelle colonne 'access_token'
     $insertion = $db->prepare("UPDATE users SET accesstoken = :access_token WHERE id= :id");
-    $insertion->execute(['access_token'=>$accessToken, "id"=>$_GET['id']]);
+    $insertion->execute(['access_token'=>$accessToken, "id"=>$result['id']]);
 
     // header("Location: index.php");
   }else{

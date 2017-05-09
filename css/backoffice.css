@@ -1,0 +1,55 @@
+.sidebar{
+  background-color: black;
+  color: white;
+  width: 20vw;
+  position: absolute;
+  height: 100vh;
+}
+.sidebarHeader{
+  border-bottom: 1px solid white;
+  text-align: center;
+}
+
+.userName{
+  padding: 10px 0 10px 0;
+}
+.sidebar ul, li{
+  list-style: none;
+  padding-left: 2%;
+  padding-bottom: 15px;
+}
+.toggle_button{
+  position: absolute;
+  right: 5%;
+  font-size: 1.2em;
+  top: 15px;
+  display: none;
+}
+.mainBackoffice{
+  position: absolute;
+  width: 80vw;
+  margin-left: 20vw;
+  color: black;
+  top: 0
+}
+
+
+
+@media screen and (max-width: 768px){
+  .sidebar{
+    width: 100vw;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  .sidebarBody{
+    text-align: center;
+  }
+  .mainBackoffice{
+    margin-left: 0;
+    width: 100vw;
+    top: 70px;
+  }
+  .toggle_button{
+    display: inherit;
+  }
+}
