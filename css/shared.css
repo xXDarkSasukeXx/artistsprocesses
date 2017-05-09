@@ -1,0 +1,66 @@
+@font-face {
+    font-family: Agency;
+    src: url(../fonts/AgencyFB.ttf);
+}
+a{
+  color: #968c56;
+  transition: all 1s ease;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #ded9c3;
+  text-decoration: none;
+
+}
+.main_font{
+  font-family: Agency;
+}
+.color_red{
+  color: #fa2e21;
+}
+.color_brown{
+  color: #968c56;
+}
+.search-bar{
+  text-align: center;
+  margin-top: 15px;
+}
+.input-group-addon{
+  background-color: #ded9c3;
+}
+.content{
+  margin-top: 20px;
+}
+
+.menu_li{
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 20px;
+  padding-left: 0;
+}
+.menu_li:first-child{
+  margin-left: 0;
+}
+.menu-parent{
+  padding-left: 0;
+}
+.top-margin{
+  margin-top: 15px;
+}
+.nopad{
+  padding-left: 0;
+  padding-right: 0;
+}
+.btn-validate{
+  background-color: #ded9c3;
+}
+.btn-close{
+  background-color: #ded9c3;
+}
+.top-connection{
+  text-align: right;
+}
+.connected_user{
+  display: block;
+}

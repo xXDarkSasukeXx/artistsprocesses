@@ -1,0 +1,23 @@
+#logo_box{
+  border: 1px solid #ded9c3;
+  text-align: center;
+  background: #ded9c3;
+  font-family: Agency;
+}
+.logo_letter_box{
+  color: black;
+  display: inline-block;
+  background: white;
+  text-align: center;
+  margin-left: 3px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 2em;
+  width: 7%;
+}
+.logo_second_part{
+  text-align: center;
+  font-family: Agency;
+  font-size: 2em;
+  border: 1px solid #ded9c3;
+}
