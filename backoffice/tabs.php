@@ -1,49 +1,27 @@
 
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-      <a href="modify.php?id=<?php echo (isset($_GET["id"]))?$_GET["id"]:""; ?>">MODIFY</a>
+    <div role="tabpanel" class="tab-pane" id="profil">
+      <?php require('profil.php'); ?>
     </div>
-    <div role="tabpanel" class="tab-pane" id="profile">
-      oklm
+    <div role="tabpanel" class="tab-pane" id="messages">
+      <?php require('messages.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="stats">
-      oklm1
+      <?php require('stats.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="artists">
-      oklm2
+      <?php require('artistlist.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="users">
-      oklm3
+      <?php require('userslist.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="followers">
-      oklm4
+      <?php require('followers.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="following">
-      oklm5
+      <?php require('following.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="contact">
-      <form action="contact.php?id=<?php echo (isset($_GET["id"]))?$_GET["id"]:""; ?>" method="post">
-        <div>
-            <label for="name">Nom :</label>
-            <input type="text" name="name" />
-        </div>
-        <div>
-            <label for="courriel">Courriel :</label>
-            <input type="email" name="courriel" />
-        </div>
-        <div>
-            <label for="object">Objet :</label>
-            <input type="text" name="object" />
-        </div>
-        <div>
-            <label for="body">Message :</label>
-            <textarea name="body"></textarea>
-        </div>
-        
-        <div class="button">
-            <button type="submit">Envoyer votre message</button>
-        </div>
-      </form>
-
+      <?php require('contact.php'); ?>
     </div>
   </div>
