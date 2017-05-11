@@ -49,7 +49,11 @@
           </div>
           <div class="sidebarBody">
             <ul class="" role="tablist">
-              <li role="presentation"><a href="#profil" aria-controls="profil" role="tab" data-toggle="tab">Profil</a></li>
+              <li role="presentation"
+              <?php if($result['status']==0 || $result['status']==1){
+                echo 'class="active"';
+              } ?>
+              ><a href="#profil" aria-controls="profil" role="tab" data-toggle="tab">Profil</a></li>
               <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
               <?php
               if ($result['is_admin']==1) {
