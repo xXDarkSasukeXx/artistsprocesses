@@ -1,6 +1,6 @@
 
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane" id="profile">
+    <div role="tabpanel" class="tab-pane" id="profil">
       <?php require('profil.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
