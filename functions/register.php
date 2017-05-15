@@ -14,7 +14,7 @@ if(
     isset($_POST["pwd2"]) &&
     isset($_POST["status"]) &&
     !empty($_POST["birthday"])
-    // (!empty($_POST["captcha"]) || !empty($_GET["id"]))
+    (!empty($_POST["captcha"]) || !empty($_GET["id"]))
   ){
     $error = FALSE;
     $msgErrors;
@@ -224,7 +224,7 @@ if(
       $_SESSION['data_form'] = $_POST;
       if (empty($_GET["id"])) {
         header("Location: CreateUser.php");
-      }else {
+      }else{
         header("Location: modifyUser.php?id=".$_GET["id"]);
       }
     }
