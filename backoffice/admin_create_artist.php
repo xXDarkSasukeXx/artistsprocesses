@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require "../shared/header.php";
-	require "init.php";
+	require "../functions/init.php";
 
 
 if(isset( $_SESSION['subscription']) ){
@@ -25,17 +25,8 @@ if(isset( $_SESSION['subscription']) ){
 </div>
 <div class="row">
 	<div class="col-md-6">
-		<h2>Création de compte</h2>
-	  <form method="POST" action="../functions/register.php">
-			<div class="col-md-12">
-				<div>
-					Email:
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-					<input type="email" class='form-control' placeholder="Email" name="email" value="<?php echo (isset($form["email"]))?$form["email"]:"" ?>" required>
-				</div>
-			</div>
+		<h2>Création d'un Artiste</h2>
+	  <form method="POST" action="administration.php">
 			<div class="col-md-6 top-margin">
 				<div>
 					Prénom:
@@ -52,24 +43,6 @@ if(isset( $_SESSION['subscription']) ){
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
 					<input type="text" class='form-control' placeholder="Surname" name="surname"  value="<?php echo (isset($form["surname"]))?$form["surname"]:"" ?>" >
-				</div>
-			</div>
-			<div class="col-md-6 top-margin">
-				<div>
-					Mot de passe:
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
-					<input type="password" class='form-control' placeholder="Mot de passe" name="pwd1" required>
-				</div>
-			</div>
-			<div class="col-md-6 top-margin">
-				<div>
-					Confirmez le mot de passe:
-				</div>
-				<div class="input-group">
-					<span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
-					<input type="password" class='form-control' placeholder="Confirmation de mot de passe" name="pwd2" required>
 				</div>
 			</div>
 			<div class="col-md-6 top-margin">
@@ -126,7 +99,7 @@ if(isset( $_SESSION['subscription']) ){
 				</div>
 			</div>
 			<div class="col-md-12 top-margin">
-				<img src="captcha.php" class="img-responsive">
+				<img src="../functions/captcha.php" class="img-responsive">
 			</div>
 			<div class="col-md-6 top-margin">
 				<div>
