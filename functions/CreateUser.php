@@ -93,18 +93,18 @@ if(isset( $_SESSION['subscription']) ){
 				<div>
 					Année de naissance:
 				</div>
-				<div class="">
+				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-					<input type="date" class='' name="birthday" value="<?php echo (isset($form["birthday"]))?$form["birthday"]:"" ?>" >
+					<input type="date" class='form-control' name="birthday" value="<?php echo (isset($form["birthday"]))?$form["birthday"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-6 top-margin">
 				<div>
 					Année de décès:
 				</div>
-				<div class="">
+				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-					<input type="date" class='' name="deathday" value="<?php echo (isset($form["deathday"]))?$form["deathday"]:"" ?>" >
+					<input type="date" class='form-control' name="deathday" value="<?php echo (isset($form["deathday"]))?$form["deathday"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-12 top-margin">
@@ -128,18 +128,18 @@ if(isset( $_SESSION['subscription']) ){
 				<div>
 					Date de reconnaissance:
 				</div>
-				<div class="">
+				<div class="input-group">
 					<span class=""><i class="fa fa-calendar" aria-hidden="true"></i></span>
-					<input type="date" class='' name="beginning" value="<?php echo (isset($form["beginning"]))?$form["beginning"]:"" ?>" >
+					<input type="date" class='form-control' name="beginning" value="<?php echo (isset($form["beginning"]))?$form["beginning"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-6 top-margin">
 				<div>
 					Date de la fin de reconnaissance:
 				</div>
-				<div class="">
+				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-					<input type="date" class='' name="ending" value="<?php echo (isset($form["ending"]))?$form["ending"]:"" ?>" >
+					<input type="date" class='form-control' name="ending" value="<?php echo (isset($form["ending"]))?$form["ending"]:"" ?>" >
 				</div>
 			</div>
 			<div class="col-md-12 top-margin">
