@@ -42,7 +42,7 @@
 		              <?php
 		              	$db = connectBdd();
       					    // Fetch artist details
-      					    $query = $db->prepare("SELECT * FROM users WHERE status = 1 AND is_admin = 0 AND is_verified = 1");
+      					    $query = $db->prepare("SELECT * FROM users WHERE status = 1 AND is_admin = 0 AND is_verified = 1 AND is_deleted is null");
       					    $query->execute();
       					    $result = count($query->fetchAll());
 
@@ -67,7 +67,7 @@
 		              <span class="info-box-text">Visiteurs</span>
 		              <span class="info-box-number">
                     <?php
-        					    $query = $db->prepare("SELECT * FROM users WHERE status = 0 AND is_admin = 0 AND is_verified = 1");
+        					    $query = $db->prepare("SELECT * FROM users WHERE status = 0 AND is_admin = 0 AND is_verified = 1 AND is_deleted is null");
         					    $query->execute();
         					    $result = count($query->fetchAll());
 
@@ -121,7 +121,7 @@
 		              <span class="info-box-text">Nouveau utilisateurs</span>
 		              <span class="info-box-number">
                     <?php
-        					    $query = $db->prepare("SELECT * FROM users WHERE is_admin = 0 AND is_verified = 1 AND :now - UNIX_TIMESTAMP(date_inserted) < :three_month ");
+        					    $query = $db->prepare("SELECT * FROM users WHERE is_admin = 0 AND is_verified = 1 AND :now - UNIX_TIMESTAMP(date_inserted) < :three_month AND is_deleted is null");
                       $query->execute([
                         "now"=>time(),
                         "three_month"=>7889400
@@ -159,7 +159,7 @@
 		            <div class="box-body">
 		               <?php
 						//Récupérer tous les utilisateurs de la bdd
-						$result = $db->query('SELECT email, name, surname FROM users WHERE date_updated is not null');
+						$result = $db->query('SELECT id, email, name, surname FROM users WHERE date_updated is not null AND is_deleted is null');
 						//Afficher dans un tableau html les users
 						echo "<div class='col-md-3'>
 								<div class='col-md-12'>
@@ -232,7 +232,7 @@
 		            <div class="box-body">
 		               <?php
 						//Récupérer tous les utilisateurs de la bdd
-						$result = $db->query('SELECT email, name, surname FROM users');
+						$result = $db->query('SELECT id, email, name, surname FROM users WHERE is_deleted is null');
 						//Afficher dans un tableau html les users
 						echo "<div class='col-md-3'>
 								<div class='col-md-12'>
@@ -274,7 +274,8 @@
 							echo"<div class='col-md-3'>
 									<div class='col-md-12'>
 									<a class='btn btn-default btn-lg' href='#'><i class='fa fa-eye' aria-hidden='true'></i></a>
-									<a class='btn btn-default btn-lg' href='#'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
+									<a class='btn btn-default btn-lg' href='modify.php?id=".$data["id"]."' target='blank'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
+                  <a class='btn btn-default btn-lg btn-danger' href='delete.php?id=".$data["id"]."'><i class='fa fa-times' aria-hidden='true'></i></a>
 									</div>
 								</div>";
 						}
