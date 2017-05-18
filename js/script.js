@@ -27,6 +27,7 @@ $(document).ready(function() {
         $('.sidebar').addClass('toggled');
       });
     }
+
   });
 
 
