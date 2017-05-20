@@ -13,8 +13,8 @@ if(
     !empty($_POST["pwd1"]) &&
     isset($_POST["pwd2"]) &&
     isset($_POST["status"]) &&
-    !empty($_POST["birthday"])
-    // (!empty($_POST["captcha"]) || !empty($_GET["id"]))
+    !empty($_POST["birthday"]) &&
+    (!empty($_POST["captcha"]) || !empty($_GET["id"]))
   ){
     $error = FALSE;
     $msgErrors;
@@ -148,7 +148,7 @@ if(
         }
     }
 
-    if (!$error) {
+    if (!$error && empty($_GET['id'])) {
       $id = (empty($_GET["id"]))?-1:$_GET["id"];
       $query = $bdd -> prepare("SELECT id FROM users WHERE email= :email AND id!=:id");
       $query -> execute([
@@ -186,21 +186,26 @@ if(
                     "beginning"=>$_POST["beginning"],
                     "ending"=>$_POST["ending"],
                 ]);
+        header("Location: ../public/index.php");
         }else{
+            $mdp = password_hash($_POST['pwd1'], PASSWORD_DEFAULT);
             $query = $bdd->prepare(
                 "UPDATE users SET
-                email=:email,
-                name=:name,
-                surname=:surname,
-                status=:status,
-                birthday=:birthday,
-                date_death=:deathday,
-                scene=:scene,
-                best_period_beginning=:beginning,
-                best_period_ending=:ending,
-                date_updated=now()
-                WHERE id=:id"
+                email = :email,
+                name = :name,
+                surname = :surname,
+                password = :password,
+                status = :status,
+                birthday = :birthday,
+                date_death = :deathday,
+                scene = :scene,
+                best_period_beginning = :beginning,
+                best_period_ending = :ending,
+                date_updated = :date_updated
+                WHERE id = :id"
             );
+
+            $now = date('Y/m/d h:i:s', time());
 
             $query->execute([
                 "email"=>$_POST["email"],
@@ -213,18 +218,20 @@ if(
                 "scene"=>$_POST["scene"],
                 "beginning"=>$_POST["beginning"],
                 "ending"=>$_POST["ending"],
+                "date_updated"=> $now,
                 "id"=>$_GET["id"]
             ]);
 
+        header("Location: ../backoffice/index.php?id=".$_GET['id']);
         }
-        header("Location: createUser.php");
+        
 
     }else{
       $_SESSION['subscription'] = implode(',', $msgErrors);
       $_SESSION['data_form'] = $_POST;
       if (empty($_GET["id"])) {
         header("Location: CreateUser.php");
-      }else {
+      }else{
         header("Location: modifyUser.php?id=".$_GET["id"]);
       }
     }

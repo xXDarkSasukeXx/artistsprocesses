@@ -1,5 +1,4 @@
 <?php require('../shared/menu.php');
-    
       $db = connectBdd();
       // Fetch artist details
       $query = $db->prepare("SELECT * FROM users WHERE id = :id");
@@ -23,7 +22,7 @@
       </div>
       <div class="col-md-6 artist_top">
         <?php
-          echo date('Y',strtotime($result["best_period_beginning"])) . '-' . date('Y',strtotime($result["best_period_beginning"]));
+          echo date('Y',strtotime($result["best_period_beginning"])) . '-' . date('Y',strtotime($result["best_period_ending"]));
         ?>
       </div>
       <div class="col-md-12 top-margin">

@@ -1,19 +1,33 @@
-.sidebar{
+.sidebar-ap{
   background-color: black;
   color: white;
   width: 20vw;
-  position: absolute;
-  height: 100vh;
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
 }
 .sidebarHeader{
   border-bottom: 1px solid white;
   text-align: center;
 }
-
+.wrapper{
+  overflow: auto;
+}
+.skin-blue .main-header .navbar{
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.bg-aqua .fa-user-o{
+  color: white;
+}
+.content-wrapper, .right-side, .main-footer{
+  margin-top: 50px;
+}
 .userName{
   padding: 10px 0 10px 0;
 }
-.sidebar ul, li{
+.sidebar-ap ul, li{
   list-style: none;
   padding-left: 2%;
   padding-bottom: 15px;
@@ -32,11 +46,15 @@
   color: black;
   top: 0
 }
-
-
+.main-header .navbar{
+  margin-left: 0;
+}
+.content-wrapper, .right-side, .main-footer{
+  margin-left: 0;
+}
 
 @media screen and (max-width: 768px){
-  .sidebar{
+  .sidebar-ap{
     width: 100vw;
     opacity: 0.7;
     z-index: 1;

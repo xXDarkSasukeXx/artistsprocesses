@@ -22,13 +22,14 @@ require('../shared/header.php');
       <a href="../functions/disconnectUser.php" class="color_red">Se déconnecter</a>
     <?php endif; ?>
   </div>
+
   <?php require("../shared/connectionModal.php"); ?>
 
 </div>
 <div class="row">
   <div class="col-md-4 col-md-offset-4 input-group search-bar">
     <span class="input-group-addon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
-    <input type="text" class='form-control input_search' name="artistSearch" placeholder="Entrez un nom d'artiste">
+    <input type="text" onkeyup="showHint(this.value)" class='form-control input_search' name="artistSearch" placeholder="Entrez un nom d'artiste">
     <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
   </div>
 </div>
