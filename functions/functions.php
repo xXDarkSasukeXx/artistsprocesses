@@ -2,7 +2,7 @@
 function connectBdd(){
 	try{
     $bdd = new PDO(
-			DB_DRIVER.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT, DB_USER, DB_PWD);
+			DB_DRIVER.":host=".DB_HOST.";dbname=".DB_NAME.";port=".DB_PORT, DB_USER, DB_PWD,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 	}catch(Exception $e){
 		die("Erreur : ".$e->getMessage()); // ="méthode"
 	}

@@ -2,10 +2,8 @@
  require "../functions/headerAdmin.php";
  require "../functions/init.php";
 ?>
-
-
+<div class='container-fluid'>
   <div class="row">
-
     <div class="col-md-12">
 		<div class="skin-blue sidebar-mini" class="wrapper" style="height: auto;"> <!-- MAIN DIV -->
 
@@ -334,3 +332,4 @@
 		<div class="jvectormap-label"></div>
     </div>
   </div>
+</div>
