@@ -45,6 +45,7 @@ $(document).ready(function() {
         $('.sidebar-ap').addClass('toggled');
       });
     }
+
   });
 
 
@@ -53,5 +54,7 @@ $(document).ready(function() {
     e.preventDefault()
     $(this).tab('show')
   });
+
+
 
 });

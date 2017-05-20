@@ -13,7 +13,6 @@ if(!empty($_POST['pwd1']) && !empty($_POST['email'])){
     //On l'insère en BDD dans une nouvelle colonne 'access_token'
     $insertion = $db->prepare("UPDATE users SET accesstoken = :access_token WHERE id= :id");
     $insertion->execute(['access_token'=>$accessToken, "id"=>$result['id']]);
-
   }else{
     $msg_error = 'Identifiants incorrects';
     if( !file_exists("log")){

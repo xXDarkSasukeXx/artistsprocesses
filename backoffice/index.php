@@ -35,7 +35,8 @@
     $query = $db->prepare("SELECT * FROM users WHERE id = :id");
     $query->execute(['id'=>$_GET['id']]);
     $result = $query->fetch();
-    if (!isConnected()) {
+    $_SESSION['id']=$result['id'];
+    if (!isConnected() || $_SESSION['id']!=$_GET['id']) {
       echo "<script>location.href='../public/index.php';</script>";
     }
     ?>

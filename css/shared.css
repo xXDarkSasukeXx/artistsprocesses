@@ -64,3 +64,6 @@ a:hover{
 .connected_user{
   display: block;
 }
+.not_show{
+  display: none;
+}
