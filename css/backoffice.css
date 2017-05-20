@@ -18,6 +18,9 @@
   width: 100%;
   top: 0;
 }
+.bg-aqua .fa-user-o{
+  color: white;
+}
 .content-wrapper, .right-side, .main-footer{
   margin-top: 50px;
 }
