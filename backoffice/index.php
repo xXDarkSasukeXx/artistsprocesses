@@ -73,18 +73,46 @@
                   echo 'class="active"';
                 }
               } ?>
-              ><a href="#profil" aria-controls="profil" role="tab" data-toggle="tab">Profil</a></li>
-              <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+              >
+                <a href="#profil" aria-controls="profil" role="tab" data-toggle="tab">
+                  <i class="fa fa-user sidebar_icons" aria-hidden="true"></i>
+                  Profil
+                </a>
+              </li>
+              <li role="presentation">
+                <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                  <i class="fa fa-comments sidebar_icons" aria-hidden="true"></i>
+                  Messages
+                </a>
+              </li>
               <?php
               if ($result['is_admin']==1) {
-                echo '<li role="presentation" class="active"><a href="#stats" aria-controls="stats" role="tab" data-toggle="tab">Gestion</a></li>
-                      <li role="presentation"><a href="#artists" aria-controls="artists" role="tab" data-toggle="tab">Les artistes</a></li>
-                      <li role="presentation"><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Les utilisateurs</a></li>';
+                echo '<li role="presentation" class="active"><a href="#stats" aria-controls="stats" role="tab" data-toggle="tab"><i class="fa fa-tasks sidebar_icons" aria-hidden="true"></i>
+Gestion</a></li>
+                      <li role="presentation"><a href="#artists" aria-controls="artists" role="tab" data-toggle="tab"><i class="fa fa-paint-brush sidebar_icons" aria-hidden="true"></i>
+Les artistes</a></li>
+                      <li role="presentation"><a href="#users" aria-controls="users" role="tab" data-toggle="tab"><i class="fa fa-users sidebar_icons" aria-hidden="true"></i>
+Les utilisateurs</a></li>';
               }
               ?>
-              <li role="presentation"><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab">Les abonnés</a></li>
-              <li role="presentation"><a href="#following" aria-controls="following" role="tab" data-toggle="tab">Vos abonnements</a></li>
-              <li role="presentation"><a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">Contact</a></li>
+              <li role="presentation">
+                <a href="#followers" aria-controls="followers" role="tab" data-toggle="tab">
+                  <i class="fa fa-arrow-circle-right sidebar_icons" aria-hidden="true"></i>
+                  Les abonnés
+                </a>
+              </li>
+              <li role="presentation">
+                <a href="#following" aria-controls="following" role="tab" data-toggle="tab">
+                  <i class="fa fa-arrow-circle-left sidebar_icons" aria-hidden="true"></i>
+                  Vos abonnements
+                </a>
+              </li>
+              <li role="presentation">
+                <a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">
+                  <i class="fa fa-envelope sidebar_icons" aria-hidden="true"></i>
+                  Contact
+                </a>
+              </li>
             </ul>
         </div>
       </div>

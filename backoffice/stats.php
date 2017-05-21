@@ -26,7 +26,7 @@
               <?php
               	$db = connectBdd();
   					    // Fetch artist details
-  					    $query = $db->prepare("SELECT * FROM users WHERE status = 1 AND is_admin is null AND is_verified = 1 AND is_deleted is null");
+  					    $query = $db->prepare("SELECT * FROM USERS WHERE status = 1 AND is_admin is null AND is_verified = 1 AND is_deleted is null");
   					    $query->execute();
   					    $result = count($query->fetchAll());
 
