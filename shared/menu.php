@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../functions/init.php');
+require('functions/init.php');
 require('header.php'); ?>
   <div class="container content">
     <div class="row">
@@ -9,11 +9,11 @@ require('header.php'); ?>
       </div>
       <div class="col-md-6">
         <ul class="menu-parent">
-          <li class='menu_li'><a href="../public/about.php" class="color_brown">À propos</a></li>
-          <li class='menu_li'><a href="../public/process.php" class="color_brown">Le processus artistique</a></li>
-          <li class='menu_li'><a href="../public/base.php" class="color_brown">Les artistes de la base</a></li>
-          <li class='menu_li'><a href="../public/author.php" class="color_brown">L'auteur</a></li>
-          <li class='menu_li'><a href="../public/contact.php" class="color_brown">Contact</a></li>
+          <li class='menu_li'><a href="public/about.php" class="color_brown">À propos</a></li>
+          <li class='menu_li'><a href="public/process.php" class="color_brown">Le processus artistique</a></li>
+          <li class='menu_li'><a href="public/base.php" class="color_brown">Les artistes de la base</a></li>
+          <li class='menu_li'><a href="public/author.php" class="color_brown">L'auteur</a></li>
+          <li class='menu_li'><a href="public/contact.php" class="color_brown">Contact</a></li>
         </ul>
         <div class="row">
           <div class="col-md-9">
@@ -34,10 +34,10 @@ require('header.php'); ?>
             $connectedUser = $db->query("SELECT * FROM users WHERE is_deleted is null AND accesstoken is not null");
             $connected = $connectedUser->fetch();
           ?>
-          <?php echo '<a href="../backoffice/index.php?id='.$connected['id'].'" class="connected_user"><i class="fa fa-user-o" aria-hidden="true"></i> '; ?>
+          <?php echo '<a href="backoffice/index.php?id='.$connected['id'].'" class="connected_user"><i class="fa fa-user-o" aria-hidden="true"></i> '; ?>
             <?php echo $connected['name'] . ' ' . $connected['surname']; ?>
           </a>
-					<a href="../functions/disconnectUser.php" class="color_red">Se déconnecter</a>
+					<a href="functions/disconnectUser.php" class="color_red">Se déconnecter</a>
 				<?php endif; ?>
       </div>
 

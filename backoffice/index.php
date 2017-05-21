@@ -37,7 +37,7 @@
     $result = $query->fetch();
     $_SESSION['id']=$result['id'];
     if (!isConnected() || $_SESSION['id']!=$_GET['id']) {
-      echo "<script>location.href='../public/index.php';</script>";
+      echo "<script>location.href='../index.php';</script>";
     }
     ?>
 

@@ -16,7 +16,7 @@ if(!empty($_POST['pwd1']) && !empty($_POST['email'])){
     $insertion = $db->prepare("UPDATE users SET accesstoken = :access_token WHERE id= :id");
     $insertion->execute(['access_token'=>$accessToken, "id"=>$result['id']]);
 
-    header("Location: ../public/index.php");
+    header("Location: ../index.php");
   }else{
     $msg_error = 'Identifiants incorrects';
     if( !file_exists("log")){

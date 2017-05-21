@@ -186,7 +186,7 @@ if(
                     "beginning"=>$_POST["beginning"],
                     "ending"=>$_POST["ending"],
                 ]);
-        header("Location: ../public/index.php");
+        header("Location: ../index.php");
         }else{
             $mdp = password_hash($_POST['pwd1'], PASSWORD_DEFAULT);
             $query = $bdd->prepare(
@@ -224,7 +224,7 @@ if(
 
         header("Location: ../backoffice/index.php?id=".$_GET['id']);
         }
-        
+
 
     }else{
       $_SESSION['subscription'] = implode(',', $msgErrors);

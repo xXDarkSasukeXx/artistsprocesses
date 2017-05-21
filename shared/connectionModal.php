@@ -52,7 +52,7 @@ if(!empty($_POST['pwd1']) && !empty($_POST['email'])){
               </div>
             </div>
           <div class="">
-            Vous n'avez pas de compte? <a href="../functions/CreateUser.php">Créez un compte</a>
+            Vous n'avez pas de compte? <a href="functions/CreateUser.php">Créez un compte</a>
           </div>
         </div>
         <div class="modal-footer">

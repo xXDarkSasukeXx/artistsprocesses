@@ -6,7 +6,7 @@ require('../functions/init.php');
   $query->execute(['id'=>$_GET['id']]);
   $result = $query->fetch();
   if (!isConnected()) {
-    echo "<script>location.href='../public/index.php';</script>";
+    echo "<script>location.href='../index.php';</script>";
   }
 
   if( !file_exists("../gallery")){

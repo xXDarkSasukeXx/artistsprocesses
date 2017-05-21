@@ -1,4 +1,4 @@
-<?php require('../shared/menu.php');
+<?php require('shared/menu.php');
       $db = connectBdd();
       // Fetch artist details
       $query = $db->prepare("SELECT * FROM users WHERE id = :id");
@@ -110,4 +110,4 @@
 
   </div>
 </div>
-<?php require('../shared/footer.php'); ?>
+<?php require('shared/footer.php'); ?>
