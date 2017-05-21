@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	require "../shared/header.php";
-	require "init.php";
+	require "shared/header.php";
+	require "functions/init.php";
 
 
 if(isset( $_SESSION['subscription']) ){
@@ -19,14 +19,14 @@ if(isset( $_SESSION['subscription']) ){
 <div class="row">
 	<div class="col-md-4">
 		<?php
-			require "../shared/logo.php";
+			require "shared/logo.php";
 		?>
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-6">
 		<h2>Création de compte</h2>
-	  <form method="POST" action="register.php">
+	  <form method="POST" action="functions/register.php">
 			<div class="col-md-12">
 				<div>
 					Email:
@@ -129,7 +129,7 @@ if(isset( $_SESSION['subscription']) ){
 					Date de reconnaissance:
 				</div>
 				<div class="input-group">
-					<span class=""><i class="fa fa-calendar" aria-hidden="true"></i></span>
+					<span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
 					<input type="date" class='form-control' name="beginning" value="<?php echo (isset($form["beginning"]))?$form["beginning"]:"" ?>" >
 				</div>
 			</div>
@@ -165,6 +165,5 @@ if(isset( $_SESSION['subscription']) ){
 </div>
 
 <?php
-   /*print_r($_SESSION["captcha"]);*/
-    include "../shared/footer.php";
+    include "shared/footer.php";
 ?>
