@@ -143,7 +143,7 @@ if(isset( $_SESSION['subscription']) ){
 				</div>
 			</div>
 			<div class="col-md-12 top-margin">
-				<img src="captcha.php" class="img-responsive">
+				<img src="functions/captcha.php" class="img-responsive">
 			</div>
 			<div class="col-md-6 top-margin">
 				<div>

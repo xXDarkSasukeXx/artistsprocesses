@@ -1,5 +1,5 @@
 .sidebar-ap{
-  background-color: black;
+  background-color: #222d32;
   color: white;
   width: 20vw;
   position: fixed;
@@ -9,6 +9,13 @@
 .sidebarHeader{
   border-bottom: 1px solid white;
   text-align: center;
+  background-color: #367fa9;
+}
+.sidebarBody a{
+  color: white;
+}
+.sidebar_icons{
+  margin-right: 10px
 }
 .wrapper{
   overflow: auto;
@@ -22,7 +29,7 @@
   color: white;
 }
 .content-wrapper, .right-side, .main-footer{
-  margin-top: 50px;
+  margin-top: 60px;
 }
 .userName{
   padding: 10px 0 10px 0;
@@ -48,6 +55,7 @@
 }
 .main-header .navbar{
   margin-left: 0;
+  min-height: 60px;
 }
 .content-wrapper, .right-side, .main-footer{
   margin-left: 0;
@@ -60,6 +68,9 @@
 }
 .add_artists:hover{
   color: green;
+}
+.main-header .sidebar-toggle{
+  padding: 20px 15px;
 }
 
 @media screen and (max-width: 768px){
