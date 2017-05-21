@@ -1,12 +1,12 @@
 
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane" id="profil">
+    <div role="tabpanel" class='tab-pane <?php if($result['is_admin']!=1){ echo "active"; } ?>' id="profil">
       <?php require('profil.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <?php require('messages.php'); ?>
     </div>
-    <div role="tabpanel" class="tab-pane" id="stats">
+    <div role="tabpanel" class='tab-pane <?php if($result['is_admin']==1){ echo "active"; } ?>' id="stats">
       <?php require('stats.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="artists">
