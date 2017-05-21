@@ -26,7 +26,7 @@
               <?php
               	$db = connectBdd();
   					    // Fetch artist details
-  					    $query = $db->prepare("SELECT * FROM users WHERE status = 1 AND is_admin = 0 AND is_verified = 1 AND is_deleted is null");
+  					    $query = $db->prepare("SELECT * FROM users WHERE status = 1 AND is_admin is null AND is_verified = 1 AND is_deleted is null");
   					    $query->execute();
   					    $result = count($query->fetchAll());
 
@@ -51,7 +51,7 @@
               <span class="info-box-text">Visiteurs</span>
               <span class="info-box-number">
                 <?php
-    					    $query = $db->prepare("SELECT * FROM users WHERE status = 0 AND is_admin = 0 AND is_verified = 1 AND is_deleted is null");
+    					    $query = $db->prepare("SELECT * FROM users WHERE status = 0 AND is_admin is null AND is_verified = 1 AND is_deleted is null");
     					    $query->execute();
     					    $result = count($query->fetchAll());
 
@@ -80,7 +80,7 @@
               <span class="info-box-text">A vérifier</span>
               <span class="info-box-number">
                 <?php
-    					    $query = $db->prepare("SELECT * FROM users WHERE is_admin = 0 AND is_verified = 0 AND is_deleted is null");
+    					    $query = $db->prepare("SELECT * FROM users WHERE is_admin is null AND is_verified = 0 AND is_deleted is null");
     					    $query->execute();
     					    $result = count($query->fetchAll());
 
@@ -102,10 +102,10 @@
             <span class="info-box-icon bg-yellow"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Nouveau utilisateurs</span>
+              <span class="info-box-text">Nouveaux utilisateurs</span>
               <span class="info-box-number">
                 <?php
-    					    $query = $db->prepare("SELECT * FROM users WHERE is_admin = 0 AND is_verified = 1 AND :now - UNIX_TIMESTAMP(date_inserted) < :three_month AND is_deleted is null");
+    					    $query = $db->prepare("SELECT * FROM users WHERE is_admin is null AND is_verified = 1 AND :now - UNIX_TIMESTAMP(date_inserted) < :three_month AND is_deleted is null");
                   $query->execute([
                     "now"=>time(),
                     "three_month"=>7889400
@@ -143,7 +143,7 @@
             <div class="box-body">
                <?php
 				//Récupérer tous les utilisateurs de la bdd ayant effectués une modif
-				$result = $db->query('SELECT id, email, name, surname FROM users WHERE date_updated is not null AND is_deleted is null AND is_admin != 1');
+				$result = $db->query('SELECT id, email, name, surname FROM users WHERE date_updated is not null AND is_deleted is null AND is_admin is null');
 				//Afficher dans un tableau html les users
 				echo "<div class='col-md-3'>
 						<div class='col-md-12'>
@@ -216,7 +216,7 @@
             <div class="box-body">
                <?php
 				//Récupérer tous les utilisateurs de la bdd
-				$result = $db->query('SELECT id, email, name, surname FROM users WHERE is_deleted is null AND is_admin != 1');
+				$result = $db->query('SELECT id, email, name, surname FROM users WHERE is_deleted is null AND is_admin is null');
 				//Afficher dans un tableau html les users
 				echo "<div class='col-md-3'>
 						<div class='col-md-12'>
@@ -289,7 +289,7 @@
             <div class="box-body">
                <?php
 				//Récupérer tous les utilisateurs de la bdd ayant effectués une modif
-				$result = $db->query('SELECT id, email, name, surname FROM users WHERE is_deleted is null AND is_admin != 1 AND is_verified = 0');
+				$result = $db->query('SELECT id, email, name, surname FROM users WHERE is_deleted is null AND is_admin is null AND is_verified = 0');
 				//Afficher dans un tableau html les users
 				echo "<div class='col-md-3'>
 						<div class='col-md-12'>
