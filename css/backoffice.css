@@ -52,6 +52,15 @@
 .content-wrapper, .right-side, .main-footer{
   margin-left: 0;
 }
+.add_artists{
+  color: green;
+}
+.artist_creation_box{
+  display: none;
+}
+.add_artists:hover{
+  color: green;
+}
 
 @media screen and (max-width: 768px){
   .sidebar-ap{

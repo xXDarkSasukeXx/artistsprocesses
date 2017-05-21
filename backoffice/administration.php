@@ -11,7 +11,7 @@ if(
     !empty($_POST["surname"]) &&
     !empty($_POST["birthday"]) &&
     !empty($_POST["scene"]) &&
-    (!empty($_POST["captcha"]) || !empty($_GET["id"]))
+    (!empty($_GET["id"]))
   ){
     $error = FALSE;
     $msgErrors;
@@ -122,28 +122,11 @@ if(
       $_POST["ending"] == 0000-00-00;
     }
 
-
-    if(!isset($_GET["id"])){
-
-        //CGU doit exister
-        if(!isset($_POST["cgu"])){
-            $error = TRUE;
-            $msgErrors[]=12;
-        }
-
-        //le captcha entré doit correspondre
-        if($_POST["captcha"] != $_SESSION['captcha']){
-            $error = TRUE;
-            $msgErrors[]=13;
-        }
-    }
-
-
     if(!$error){
         if(empty($_GET["id"])){
                 $query = $bdd->prepare(
-                    "INSERT INTO users (name, surname, birthday, date_death, scene, best_period_beginning, best_period_ending)
-                    VALUES (:name,:surname,:birthday,:deathday, :scene, :beginning, :ending);"
+                    "INSERT INTO users (name, surname, status, birthday, date_death, scene, best_period_beginning, best_period_ending)
+                    VALUES (:name,:surname,:status,:birthday,:deathday, :scene, :beginning, :ending);"
                     );
                 $query->execute([
                     "name"=>$_POST["name"],

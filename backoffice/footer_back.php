@@ -19,5 +19,7 @@
     <script type="text/javascript" src="../inc/slick/slick.min.js"></script>
 
     <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/backoffice.js"></script>
+
   </body>
 </html>
