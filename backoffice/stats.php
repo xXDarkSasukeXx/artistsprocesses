@@ -18,7 +18,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-picture-o" aria-hidden="true"></i></span>
+            <span class="info-box-icon bg-aqua"><i class="fa fa-paint-brush" aria-hidden="true"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Artistes</span>
@@ -74,7 +74,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-book" aria-hidden="true"></i></span>
+            <span class="info-box-icon bg-green"><i class="fa fa-question-circle-o" aria-hidden="true"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">A vérifier</span>

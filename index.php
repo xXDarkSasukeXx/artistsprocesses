@@ -29,8 +29,13 @@ require('shared/header.php');
 <div class="row">
   <div class="col-md-4 col-md-offset-4 input-group search-bar">
     <span class="input-group-addon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
-    <input type="text" onkeyup="showHint(this.value)" class='form-control input_search' name="artistSearch" placeholder="Entrez un nom d'artiste">
+    <input type="text" id='search_box' onkeyup="showHint(this.value)" class='form-control input_search' name="artistSearch" placeholder="Entrez un nom d'artiste">
     <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+  </div>
+  <div class="col-md-4 col-md-offset-4 parent_result_box">
+    <div class="result_box">
+      <span id="txtHint"></span>
+    </div>
   </div>
 </div>
 <div class="row">

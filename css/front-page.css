@@ -11,3 +11,13 @@
 .artist_list{
   margin-top: 20px;
 }
+.parent_result_box{
+  padding-left: 0px;
+}
+.result_box{
+  position: absolute;
+  border-radius: 2px;
+  z-index: 10;
+  width: 100%;
+  border: 1px solid #ded9c3;
+}

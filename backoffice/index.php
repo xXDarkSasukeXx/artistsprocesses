@@ -6,20 +6,10 @@
   <head>
     <meta charset="utf-8">
     <title>Artists Processes | Dashboard</title>
-    <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <!-- <link rel="stylesheet" href="../inc/bootstrap/css/bootstrap.min.css"> -->
-    <!-- Font Awesome -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"> -->
-    <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- jvectormap -->
     <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
     <link href="../inc/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../inc/font-awesome/css/font-awesome.min.css">
@@ -75,42 +65,34 @@
               } ?>
               >
                 <a href="#profil" aria-controls="profil" role="tab" data-toggle="tab">
-                  <i class="fa fa-user sidebar_icons" aria-hidden="true"></i>
-                  Profil
+                  <i class="fa fa-user sidebar_icons" aria-hidden="true"></i>Profil
                 </a>
               </li>
               <li role="presentation">
                 <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
-                  <i class="fa fa-comments sidebar_icons" aria-hidden="true"></i>
-                  Messages
+                  <i class="fa fa-comments sidebar_icons" aria-hidden="true"></i>Messages
                 </a>
               </li>
               <?php
               if ($result['is_admin']==1) {
-                echo '<li role="presentation" class="active"><a href="#stats" aria-controls="stats" role="tab" data-toggle="tab"><i class="fa fa-tasks sidebar_icons" aria-hidden="true"></i>
-Gestion</a></li>
-                      <li role="presentation"><a href="#artists" aria-controls="artists" role="tab" data-toggle="tab"><i class="fa fa-paint-brush sidebar_icons" aria-hidden="true"></i>
-Les artistes</a></li>
-                      <li role="presentation"><a href="#users" aria-controls="users" role="tab" data-toggle="tab"><i class="fa fa-users sidebar_icons" aria-hidden="true"></i>
-Les utilisateurs</a></li>';
+                echo '<li role="presentation" class="active"><a href="#stats" aria-controls="stats" role="tab" data-toggle="tab"><i class="fa fa-tasks sidebar_icons" aria-hidden="true"></i>Gestion</a></li>
+                      <li role="presentation"><a href="#artists" aria-controls="artists" role="tab" data-toggle="tab"><i class="fa fa-paint-brush sidebar_icons" aria-hidden="true"></i>Les artistes</a></li>
+                      <li role="presentation"><a href="#users" aria-controls="users" role="tab" data-toggle="tab"><i class="fa fa-users sidebar_icons" aria-hidden="true"></i>Les utilisateurs</a></li>';
               }
               ?>
               <li role="presentation">
                 <a href="#followers" aria-controls="followers" role="tab" data-toggle="tab">
-                  <i class="fa fa-arrow-circle-right sidebar_icons" aria-hidden="true"></i>
-                  Les abonnés
+                  <i class="fa fa-arrow-circle-right sidebar_icons" aria-hidden="true"></i>Les abonnés
                 </a>
               </li>
               <li role="presentation">
                 <a href="#following" aria-controls="following" role="tab" data-toggle="tab">
-                  <i class="fa fa-arrow-circle-left sidebar_icons" aria-hidden="true"></i>
-                  Vos abonnements
+                  <i class="fa fa-arrow-circle-left sidebar_icons" aria-hidden="true"></i>Vos abonnements
                 </a>
               </li>
               <li role="presentation">
                 <a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">
-                  <i class="fa fa-envelope sidebar_icons" aria-hidden="true"></i>
-                  Contact
+                  <i class="fa fa-envelope sidebar_icons" aria-hidden="true"></i>Contact
                 </a>
               </li>
             </ul>
