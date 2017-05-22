@@ -111,6 +111,11 @@
                   <i class="fa fa-user-plus" aria-hidden="true"></i>
                 </div>
               </a>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                <input type="text" onkeyup="showArtists(this.value)" class='form-control input_search' name="artistSearch" placeholder="Entrez un nom d'artiste">
+                <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+              </div>
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
